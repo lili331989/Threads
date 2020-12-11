@@ -38,8 +38,22 @@ public class Resource {
             nFile.close();
         }
         catch(Exception ex){
-            System.out.println("Incorrect format!");
+            System.out.println("Проблемы при чтении файла");
         }
         return true;
+    }
+
+    public void readFile(){
+        try {
+            FileReader fr = new FileReader(fileName);
+            Scanner scan = new Scanner(fr);
+            String text = scan.nextLine();
+            int number=Integer.parseInt(text);
+            fr.close();
+            System.out.println("Содержимое файла "+number);
+        }
+        catch(Exception ex){
+            System.out.println("Проблемы при чтении файла");
+        }
     }
 }
